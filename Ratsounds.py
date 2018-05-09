@@ -5,8 +5,16 @@ import numpy as np
 
 chunk = 2048
 
+activeMic = "arecord -r 160000 -d 10 ./rats.wav -D sysdefault:CARD=1"
+
+while True:
+    # 1: Collect data
+    p = subprocess.Popen(activeMic, shell=True)
+    time.sleep(10)
+    p.terminate()
+
 # open up a wave
-wf = wave.open('test-tones/440hz.wav', 'rb')
+wf = wave.open('rats.wav', 'rb')
 swidth = wf.getsampwidth()
 RATE = wf.getframerate()
 # use a Blackman window
