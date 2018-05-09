@@ -6,8 +6,8 @@ import numpy as np
 
 chunk = 2048 
 
-def analysis(threshold):
- # open up a wave
+def analysis():
+    # open up a wave
     wf = wave.open('./rats.wav', 'rb')
     swidth = wf.getsampwidth()
     RATE = wf.getframerate()
@@ -54,4 +54,5 @@ def analysis(threshold):
     if data:
         stream.write(data)
         stream.close()
-    
+
+analysis()
