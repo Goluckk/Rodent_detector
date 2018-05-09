@@ -1,5 +1,6 @@
 # Read in a WAV and find the freq's
 import pyaudio
+import subprocess
 import wave
 import numpy as np
 
